@@ -1,21 +1,23 @@
 format_version: 3
 pipelines:
-  experiment: # definition of mypipe1 pipeline
-    group: experiment # note that the group name can contain only of alphanumeric & underscore characters
+  experiment:
+    group: experiment
     display_order: -1
     label_template: "${COUNT}"
     lock_behavior: none
     materials:
-      experiment: # this is the name of material, the name can contain only of alphanumeric & underscore characters
-        # keyword git says about type of material and url at once
+      experiment:
         git: git@github.com:afridshaikhtw/test.git
         branch: main
         username: afridshaikhtw
-    stages: # list of stages in order
-      - build: # name of stage
+    stages:
+      - build_experiment:
           fetch_materials: true
           jobs:
-            - exec:
-                arguments:
-                  - "Experimental pipeline"
-                command: echo
+            say_hello:
+              timeout: 0
+              tasks:
+                - exec:
+                    arguments:
+                      - "Experimental pipeline"
+                    command: echo
