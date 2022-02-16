@@ -5,8 +5,6 @@ pipelines:
     display_order: -1
     label_template: "${COUNT}"
     lock_behavior: none
-    parameters: # list of parameters that can be configured for a pipeline
-      param1: value1
     materials:
       experiment: # this is the name of material, the name can contain only of alphanumeric & underscore characters
         # keyword git says about type of material and url at once
@@ -14,10 +12,10 @@ pipelines:
         branch: main
         username: afridshaikhtw
     stages: # list of stages in order
-    - build: # name of stage
-        fetch_materials: true
-        jobs:
-        - exec:
-            arguments:
-            - "Experimental pipeline"
-            command: echo
+      - build: # name of stage
+          fetch_materials: true
+          jobs:
+            - exec:
+                arguments:
+                  - "Experimental pipeline"
+                command: echo
