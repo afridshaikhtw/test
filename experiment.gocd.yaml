@@ -10,6 +10,9 @@ pipelines:
         git: git@github.com:afridshaikhtw/test.git
         branch: main
         username: afridshaikhtw
+        auto_update: true
+        destination: experiment
+        name: experiment
     stages:
       - build_experiment:
           fetch_materials: true
