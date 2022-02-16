@@ -14,10 +14,10 @@ pipelines:
         branch: main
         username: afridshaikhtw
     stages: # list of stages in order
-      - build: # name of stage
-          fetch_materials: true
-          jobs:
-            - exec:
-                arguments:
-                  - "Experimental pipeline"
-                command: echo
+    - build: # name of stage
+        fetch_materials: true
+        jobs:
+        - exec:
+            arguments:
+            - "Experimental pipeline"
+            command: echo
