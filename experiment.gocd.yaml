@@ -19,5 +19,5 @@ pipelines:
               tasks:
                 - exec:
                     arguments:
-                      - "Experimental pipeline"
+                      - "Experimental pipeline test"
                     command: echo
