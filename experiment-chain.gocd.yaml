@@ -1,0 +1,30 @@
+format_version: 3
+pipelines:
+  experiment-chain:
+    group: defaultGroup
+    display_order: -1
+    label_template: "${COUNT}"
+    lock_behavior: none
+    materials:
+      experiment:
+        pipeline: experiment
+        stage: write_file
+        name: experiment
+    stages:
+      - print_file:
+          jobs:
+            print_file:
+              timeout: 0
+              tasks:
+                - fetch:
+                    desination: ''
+                    is_file: true
+                    job: write_file
+                    pipeline: experiment
+                    run_if: passed
+                    source: experiment
+                    stage: write_file
+                - exec:
+                    arguments:
+                      - file.txt
+                    command: cat
