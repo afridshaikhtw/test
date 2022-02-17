@@ -13,7 +13,7 @@ pipelines:
         destination: experiment
         name: experiment
     stages:
-      - build_experiment:
+      - create_file:
           fetch_materials: true
           jobs:
             create_file:
@@ -23,9 +23,16 @@ pipelines:
                     arguments:
                       - file.txt
                     command: touch
+      - write_file:
+          fetch_materials: true
+          jobs:
             write_file:
               timeout: 0
               tasks:
+                - exec:
+                    arguments:
+                      - "-ltra"
+                    command: ls
                 - exec:
                     arguments:
                       - "abbc xyz"
