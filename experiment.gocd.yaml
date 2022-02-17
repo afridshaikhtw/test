@@ -16,10 +16,17 @@ pipelines:
       - build_experiment:
           fetch_materials: true
           jobs:
-            say_hello:
+            create_file:
               timeout: 0
               tasks:
                 - exec:
                     arguments:
-                      - "Experimental pipeline test"
-                    command: echo
+                      - file.txt
+                    command: touch
+            write_file:
+              timeout: 0
+              tasks:
+                - exec:
+                    arguments:
+                      - "abbc xyz" > file.txt
+                    command: echo 
