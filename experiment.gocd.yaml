@@ -35,7 +35,5 @@ pipelines:
                     command: ls
                 - exec:
                     arguments:
-                      - "abbc xyz"
-                      - >
-                      - file.txt
+                      - "\"abb xyz\" > file.txt"
                     command: echo 
