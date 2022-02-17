@@ -28,5 +28,7 @@ pipelines:
               tasks:
                 - exec:
                     arguments:
-                      - "abbc xyz" > file.txt
+                      - "abbc xyz"
+                      - >
+                      - file.txt
                     command: echo 
