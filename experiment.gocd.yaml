@@ -7,7 +7,7 @@ pipelines:
     lock_behavior: none
     materials:
       experiment:
-        git: git@github.com:afridshaikhtw/test.git
+        git: https://github.com/afridshaikhtw/test.git
         branch: main
         auto_update: true
         destination: experiment
