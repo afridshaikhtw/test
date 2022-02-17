@@ -24,7 +24,8 @@ pipelines:
                       - file.txt
                     command: touch
       - write_file:
-          # fetch_materials: true
+          fetch_materials: true
+          keep_artifact: true
           jobs:
             write_file:
               timeout: 0
